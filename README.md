@@ -1,5 +1,5 @@
 ## AnimationMovieAPI
-A restful web api with Asp.net core 6
+A restful web api with Asp.net core 6 & Entity Framework
 
 See the picture for more details
 
