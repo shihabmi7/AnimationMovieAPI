@@ -15,6 +15,10 @@ SQL Command to create database & table.
 
 - SELECT * From Movies; 
 
+# See the picture is the output after it's runs
+
+![AnimationMovieApi](https://github.com/shihabmi7/AnimationMovieAPI/assets/5005589/66ecda81-41a6-47c7-9d6f-07c4863fd013)
+
 For local database, you need to update your connection strings in appsettings.json like below:
 ```
 {
@@ -32,7 +36,3 @@ For local database, you need to update your connection strings in appsettings.js
   }
 }
 // For local development, the ASP.NET Core configuration system reads the connection string from the appsettings.json file.```
-
-# See the picture is the output after is runs
-
-![AnimationMovieApi](https://github.com/shihabmi7/AnimationMovieAPI/assets/5005589/66ecda81-41a6-47c7-9d6f-07c4863fd013)
