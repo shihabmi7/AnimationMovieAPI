@@ -9,5 +9,6 @@ namespace AnimationMovieAPI.Models
         }
 
         public DbSet<Movie> Movies { get; set; } = null!;
+        //public DbSet<AspNetUser> AspNetUsers { get; set; } = null!;
     }
 }

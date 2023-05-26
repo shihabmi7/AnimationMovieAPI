@@ -12,8 +12,12 @@ namespace AnimationMovieAPI
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-            builder.Services.AddDbContext<MovieContext>(options =>
-                options.UseSqlServer(builder.Configuration.GetConnectionString("MovieContext")));
+            /*builder.Services.AddDbContext<MovieContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("MovieContext")));*/
+
+            // Add services to the container.
+            builder.Services.AddDbContext<AspNetUsersContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DatabaseConnection")));
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

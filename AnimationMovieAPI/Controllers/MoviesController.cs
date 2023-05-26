@@ -1,5 +1,4 @@
 ﻿using AnimationMovieAPI.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -23,6 +22,7 @@ namespace AnimationMovieAPI.Controllers
 
             if (_dbContext.Movies == null)
             {
+
                 return NotFound();
             }
             return await _dbContext.Movies.ToListAsync();
@@ -33,14 +33,15 @@ namespace AnimationMovieAPI.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Movie>> GetMovie(int id) {
 
-            if ((_dbContext.Movies == null)) {
+            if (_dbContext.Movies == null)
+            {
                 return NotFound();
                 }
 
             var movie = await _dbContext.Movies.FindAsync(id);
             if (movie == null) {
                 return NotFound();
-                    }
+            }
 
             return movie;        
         }
@@ -52,8 +53,9 @@ namespace AnimationMovieAPI.Controllers
 
              _dbContext.Movies.Add(movie);
             await _dbContext.SaveChangesAsync();
-
-            return CreatedAtAction(nameof(GetMovie), new { id = movie.Id}, movie);        
+            // both method name and parms of nameof(*) must be same!
+            // else you got the error!
+            return CreatedAtAction(nameof(PostMovie), new { id = movie.Id}, movie);        
         }        
         
         
